@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LinkedIn Home UI Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f2ef;
+    }
+
+    /* Top Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .navbar .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #0a66c2;
+      margin-right: 20px;
+    }
+
+    .navbar input {
+      flex: 1;
+      padding: 8px 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-right: 20px;
+    }
+
+    .navbar nav a {
+      text-decoration: none;
+      color: #444;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    /* Main Layout */
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sidebar, .rightbar {
+      width: 20%;
+    }
+
+    .feed {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .profile-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .profile-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .post {
+      background: #f9f9f9;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .post h4 {
+      margin-bottom: 6px;
+    }
+
+    .post p {
+      margin-bottom: 10px;
+    }
+
+    .like-btn {
+      background-color: #0a66c2;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .like-btn.liked {
+      background-color: gray;
+    }
+
+    .rightbar {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .rightbar h4 {
+      margin-bottom: 10px;
+    }
+
+    .rightbar ul {
+      list-style: none;
+    }
+
+    .rightbar ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar, .rightbar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">in</div>
+    <input type="text" placeholder="Search LinkedIn" />
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Network</a>
+      <a href="#">Jobs</a>
+      <a href="#">Messaging</a>
+      <a href="#">Notifications</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <img src="linkdindp.png" alt="Profile Pic" />
+        <h3>Dipam Ghosh</h3>
+        <p>Web Developer</p>
+      </div>
+    </aside>
+
+    <!-- Feed -->
+    <main class="feed">
+      <div class="post">
+        <h4>John Doe</h4>
+        <p>Just started learning JavaScript! 🚀</p>
+        <button class="like-btn">Like</button>
+      </div>
+      <div class="post">
+        <h4>Jane Smith</h4>
+        <p>Excited to build modern UIs with React 😄</p>
+        <button class="like-btn">Like</button>
+      </div>
+      <div class="post">
+        <h4>Alex Lee</h4>
+        <p>Cloned LinkedIn using HTML, CSS & JS 🔥</p>
+        <button class="like-btn">Like</button>
+      </div>
+    </main>
+
+    <!-- Rightbar -->
+    <aside class="rightbar">
+      <h4>People you may know</h4>
+      <ul>
+        <li>Dev Sharma</li>
+        <li>Rita Verma</li>
+        <li>Harsh Patel</li>
+      </ul>
+    </aside>
+  </div>
+
+  <script>
+    document.querySelectorAll('.like-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('liked');
+        button.textContent = button.classList.contains('liked') ? 'Liked' : 'Like';
+      });
+    });
+  </script>
+</body>
+</html>
